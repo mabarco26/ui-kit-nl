@@ -1,0 +1,8 @@
+import { TButtonVariants } from ".";
+
+declare global {
+  interface IButton {
+    variant: TButtonVariants;
+    width?: number;
+  }
+}
