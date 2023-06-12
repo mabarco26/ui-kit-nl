@@ -1,4 +1,4 @@
-import { Button } from './Button';
+import Button from './Button';
 
 
 export default {
@@ -27,6 +27,7 @@ export const Secondary = {
 
 export const Large = {
   args: {
+    variant: 'primary',
     size: 'large',
     label: 'Button',
   },

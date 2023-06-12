@@ -3,9 +3,8 @@ import { ButtonWrapper } from './Button.style'
 import PropTypes from 'prop-types'
 import { Primary } from './Button.stories';
 
-const Button = ({variant, backgroundColor, size, label, ...props}) => {
+export const Button = ({variant, backgroundColor, size, label, ...props}) => {
     return (
-    <div>
         <ButtonWrapper 
         variant = {variant}
         backgroundColor = {backgroundColor}
@@ -14,7 +13,6 @@ const Button = ({variant, backgroundColor, size, label, ...props}) => {
         {...props}>
             {label}
         </ButtonWrapper>
-    </div>
     );
 };
 
@@ -42,7 +40,7 @@ Button.propTypes = {
   };
   
   Button.defaultProps = {
-    variant: 'primary',
+    variant: null,
     backgroundColor: null,  
     size: 'medium',
     onClick: undefined,
