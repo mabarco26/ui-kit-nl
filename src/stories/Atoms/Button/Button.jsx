@@ -1,12 +1,12 @@
-import React from 'react'
-import { ButtonWrapper } from './Button.style'
-import PropTypes from 'prop-types'
-import { Primary } from './Button.stories';
+import React from 'react';
+import { ButtonWrapper } from './Button.style';
+import PropTypes from 'prop-types';
 
-export const Button = ({variant, backgroundColor, size, label, ...props}) => {
+const Button = ({variant, backgroundColor, size, label, ...props}) => {
+  const mode = variant ? 'primary' : 'secondary';
     return (
-        <ButtonWrapper 
-        variant = {variant}
+        <ButtonWrapper
+        variant = {mode}
         backgroundColor = {backgroundColor}
         size = {size}
         label = {label}
@@ -18,11 +18,11 @@ export const Button = ({variant, backgroundColor, size, label, ...props}) => {
 
 Button.propTypes = {
     /**
-     * Is this the principal call to action on the page?
+     * What type of button to use?
      */
-    variant: PropTypes.string,
+    variant: PropTypes.bool,
     /**
-     * What background color to use
+     * What background color to use?
      */
     backgroundColor: PropTypes.string,
     /**
@@ -40,7 +40,7 @@ Button.propTypes = {
   };
   
   Button.defaultProps = {
-    variant: null,
+    variant: false,
     backgroundColor: null,  
     size: 'medium',
     onClick: undefined,

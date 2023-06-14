@@ -1,4 +1,4 @@
-import Button from './Button';
+import Button  from './Button';
 
 
 export default {
@@ -10,32 +10,32 @@ export default {
   },
 };
 
+const Template = args => <Button {...args} />;
 
-export const Primary = {
-  args: {
+export const Primary = Template.bind ({});
+  Primary.args = {
     variant: 'primary',
+    size: 'medium',
     label: 'Button',
-  },
-};
+  };
 
-export const Secondary = {
-  args: {
+export const Secondary = Template.bind ({});
+  Secondary.args = {
     variant: 'secondary',
+    size: 'medium',
     label: 'Button',
-  },
-};
+  };
 
-export const Large = {
-  args: {
+export const Large = Template.bind ({});
+  Large.args = {
     variant: 'primary',
     size: 'large',
     label: 'Button',
-  },
-};
+  };
 
-export const Small = {
-  args: {
+export const Small = Template.bind ({});
+  Small.args = {
+    variant: 'primary',
     size: 'small',
     label: 'Button',
-  },
-};
+  };
