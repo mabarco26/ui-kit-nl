@@ -1,12 +1,11 @@
 import React from 'react';
-import { ButtonWrapper } from './Button.style';
+import { ButtonWrapper } from '../Button/Button.style';
 import PropTypes from 'prop-types';
 
 const Button = ({variant, backgroundColor, size, label, ...props}) => {
-  const mode = variant ? 'primary' : 'secondary';
     return (
         <ButtonWrapper
-        variant = {mode}
+        variant = {variant}
         backgroundColor = {backgroundColor}
         size = {size}
         label = {label}
@@ -20,11 +19,7 @@ Button.propTypes = {
     /**
      * What type of button to use?
      */
-    variant: PropTypes.bool,
-    /**
-     * What background color to use?
-     */
-    backgroundColor: PropTypes.string,
+    variant: PropTypes.oneOf(['primary', 'secondary']),
     /**
      * How large should the button be?
      */
@@ -40,7 +35,7 @@ Button.propTypes = {
   };
   
   Button.defaultProps = {
-    variant: false,
+    variant: 'primary',
     backgroundColor: null,  
     size: 'medium',
     onClick: undefined,
